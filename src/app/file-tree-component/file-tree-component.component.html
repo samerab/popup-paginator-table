@@ -1,0 +1,14 @@
+<p>
+  file-tree-component works!
+</p>
+<ul>
+    
+  <li *ngFor="let file of files; let i = index">
+      <button class="btn btn-success" id="{{file.id}}" (click)="openFileDialog(file)">Edit file</button>
+    {{i + ' ' +file.name}}<li>
+
+      
+  
+</ul>
+<button id="btn" (click)="openFileDialog()">Add file</button>
+

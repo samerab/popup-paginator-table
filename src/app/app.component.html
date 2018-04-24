@@ -1,20 +1,105 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Custom Toolbar</span>
+  </mat-toolbar-row>
 
+  
+</mat-toolbar>
+
+
+
+<app-file-tree-component></app-file-tree-component>
+
+
+
+<app-form></app-form>
+
+
+
+
+
+<div class="container mt-5">
+    
+    
+    <input [@heroState]="state" type="text" style="width:1000px;height:200px" class="" placeholder="sadfsafsaf" #input> 
+    {{input.offsetWidth}}
+    {{date | date:'yyy - d - MMMM'}}
+    
+    <br><br>
+        <button class="pulse btn btn-outline-warning ">
+        xxxxx
+    </button>
+
+<br><br>
+
+<div class="example-container mat-elevation-z8">
+
+    <div class="example-header">
+        <mat-form-field>
+          <input #input matInput (keyup)="applyFilter(input.value)" placeholder="Filter">
+        </mat-form-field>
+      </div>
+
+      
+<mat-table #table class="table table-bordered" [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> delete </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          
+            <button (click)="aler(element)" class="btn btn-warning"> {{element.name}}</button>
+
+        </mat-cell>
+      </ng-container>
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> userId </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> title </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> body </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+  </ng-container>
+
+  
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator #paginator
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20]"
+>
+  </mat-paginator>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+    khlkhlk
+
+
+<div *ngFor="let item of itemsInPage">{{item.name}}</div>
+<app-pager [itemsArray]="itemsArray" (paginate)="setPage($event)"></app-pager>
+
+
+
+
+              
+
+      

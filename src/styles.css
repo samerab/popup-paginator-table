@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+/* #btn {
+    width: 100px;
+    height: 30px;
+    background: purple;
+    color: white;
+    border-radius: 50px
+} */
+
+.xxx {
+    background: rgba(0, 0, 0,.8)
+}
+
+.vvv {
+    background: red
+}
